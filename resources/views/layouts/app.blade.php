@@ -22,8 +22,21 @@
 </head>
 <body id="body-pd">
     <header class="header shadow-sm" id="header">
-            <div class="header_toggle"> <i class='bx bx-menu' id="header-toggle"></i> </div>
-            <div class="header_img"> <img src="https://i.imgur.com/hczKIze.jpg" alt=""> </div>
+            @guest
+                @if (Route::has('login'))
+                    <div class="header_toggle" hidden> <i class='bx bx-menu' id="header-toggle"></i> </div>
+                    <div class="header_img"> <img src="https://i.imgur.com/hczKIze.jpg" alt=""> </div>
+                @endif
+
+                @if (Route::has('register'))
+                    <div class="header_toggle" hidden> <i class='bx bx-menu' id="header-toggle"></i> </div>
+                    <div class="header_img"> <img src="https://i.imgur.com/hczKIze.jpg" alt=""> </div>
+                @endif
+                @else
+                    <div class="header_toggle"> <i class='bx bx-menu' id="header-toggle"></i> </div>
+                    <div class="header_img"> <img src="https://i.imgur.com/hczKIze.jpg" alt=""> </div>
+            @endguest
+
             <div id="app">
                 <nav class="navbar navbar-expand-md navbar-light">
                     <div class="container">
@@ -65,6 +78,13 @@
                 </nav>
             </div>
     </header>
+    @guest
+        @if (Route::has('login'))
+        @endif
+
+        @if (Route::has('register'))
+        @endif
+    @else
     <div class="l-navbar" id="nav-bar">
         <nav class="nav">
             <div> <a href="#" class="nav_logo"> <i class='bx bx-layer nav_logo-icon'></i> <span class="nav_logo-name">San Martin</span> </a>
@@ -76,7 +96,8 @@
                     <a href="#" class="nav_link"> 
                         <i class='bx bx-user nav_icon'></i> 
                         <span class="nav_name">Rooms</span> 
-                        <a href="#" class="nav_link"> 
+                    </a> 
+                    <a href="#" class="nav_link"> 
                         <i class='bx bx-message-square-detail nav_icon'></i> 
                         <span class="nav_name">available</span> 
                     </a> 
@@ -84,8 +105,6 @@
                         <i class='bx bx-bookmark nav_icon'></i> 
                         <span class="nav_name">unavailable</span> 
                     </a> 
-                    </a> 
-                    
                     <a href="#" class="nav_link"> 
                         <i class='bx bx-folder nav_icon'></i> 
                         <span class="nav_name">Users</span> 
@@ -98,8 +117,9 @@
             </div> <a href="#" class="nav_link"> <i class='bx bx-log-out nav_icon'></i> <span class="nav_name">SignOut</span> </a>
         </nav>
     </div>
+    @endguest
     <!--Container Main start-->
-        <main class="py-4">
+    <main class="py-4">
         @yield('content')
     </main>
     <!--Container Main end-->
