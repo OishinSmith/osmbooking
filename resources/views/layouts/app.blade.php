@@ -89,27 +89,27 @@
         <nav class="nav">
             <div> <a href="#" class="nav_logo"> <i class='bx bx-layer nav_logo-icon'></i> <span class="nav_logo-name">San Martin</span> </a>
                 <div class="nav_list"> 
-                    <a href="#" class="nav_link active"> 
+                    <a href="{{ route('home') }}" class="nav_link active"> 
                         <i class='bx bx-grid-alt nav_icon'></i> 
                         <span class="nav_name">Dashboard</span> 
                     </a> 
-                    <a href="#" class="nav_link"> 
+                    <a href="{{ route('rooms') }}" class="nav_link"> 
                         <i class='bx bx-user nav_icon'></i> 
                         <span class="nav_name">Rooms</span> 
                     </a> 
-                    <a href="#" class="nav_link"> 
+                    <a href="{{ route('logout') }}" class="nav_link"> 
                         <i class='bx bx-message-square-detail nav_icon'></i> 
                         <span class="nav_name">available</span> 
                     </a> 
-                    <a href="#" class="nav_link"> 
+                    <a href="{{ route('logout') }}" class="nav_link"> 
                         <i class='bx bx-bookmark nav_icon'></i> 
                         <span class="nav_name">unavailable</span> 
                     </a> 
-                    <a href="#" class="nav_link"> 
+                    <a href="{{ route('logout') }}" class="nav_link"> 
                         <i class='bx bx-folder nav_icon'></i> 
                         <span class="nav_name">Users</span> 
                     </a> 
-                    <a href="#" class="nav_link"> 
+                    <a href="{{ route('logout') }}" class="nav_link"> 
                         <i class='bx bx-bar-chart-alt-2 nav_icon'></i> 
                         <span class="nav_name">Settings</span> 
                     </a> 
