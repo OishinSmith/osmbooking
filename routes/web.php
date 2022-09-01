@@ -27,3 +27,11 @@ Route::get('/rooms', function () {
 });
 
 Route::get('/rooms', [App\Http\Controllers\RoomsController::class, 'index'])->name('rooms');
+
+Route::get('available', [App\Http\Controllers\RoomsController::class, 'available'])->name('available');
+
+Route::get('unavailable', [App\Http\Controllers\RoomsController::class, 'unavailable'])->name('unavailable');
+
+Route::get('users', [App\Http\Controllers\UserController::class, 'index'])->name('users');
+
+Route::get('settings', [App\Http\Controllers\SettingsController::class, 'index'])->name('settings');

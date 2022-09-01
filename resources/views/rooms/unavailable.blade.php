@@ -17,19 +17,19 @@
             <tbody>
                 <tr>
                 <th scope="row">1</th>
-                <td>ert ert</td>
+                <td>Oishin</td>
                 <td>Otto</td>
                 <td>@mdo</td>
                 </tr>
                 <tr>
                 <th scope="row">2</th>
-                <td>qwe qwewer</td>
+                <td>Smith</td>
                 <td>Thornton</td>
                 <td>@fat</td>
                 </tr>
                 <tr>
                 <th scope="row">3</th>
-                <td>qweqwe</td>
+                <td>Cetad</td>
                 <td>the Bird</td>
                 <td>@twitter</td>
                 </tr>

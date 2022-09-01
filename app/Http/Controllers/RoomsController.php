@@ -16,6 +16,16 @@ class RoomsController extends Controller
         return view('rooms.rooms');
     }
 
+    public function available()
+    {
+        return view('rooms.available');
+    }
+
+    public function unavailable()
+    {
+        return view('rooms.unavailable');
+    }
+
     /**
      * Show the form for creating a new resource.
      *

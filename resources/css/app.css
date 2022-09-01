@@ -132,6 +132,10 @@ a {
 	padding-left: calc(var(--nav-width) + 1rem)
 }
 
+.bx-menu {
+	display: block;
+}
+
 .active {
 	color: var(--white-color)
 }
@@ -201,4 +205,8 @@ a {
         position: absolute !important;
         right: calc(var(--nav-width) + 156px);
     }
+
+	.bx-menu {
+		display: none;
+	}
 }

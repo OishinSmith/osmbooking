@@ -14,26 +14,26 @@
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css" rel="stylesheet">
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" ></script>
     <!-- Scripts -->
     @vite(['resources/sass/app.scss', 'resources/js/app.js', 'resources/css/app.css',])
+    
 </head>
-<body id="body-pd">
-    <header class="header shadow-sm" id="header">
+<body class="body-pd" id="body-pd">
+    <header class="header shadow-sm body-pd" id="header">
             @guest
                 @if (Route::has('login'))
-                    <div class="header_toggle" hidden> <i class='bx bx-menu' id="header-toggle"></i> </div>
+                    <div class="header_toggle" hidden> <i class='bx bx-menu' id="header-toggle" value='true'></i> </div>
                     <div class="header_img"> <img src="https://i.imgur.com/hczKIze.jpg" alt=""> </div>
                 @endif
 
                 @if (Route::has('register'))
-                    <div class="header_toggle" hidden> <i class='bx bx-menu' id="header-toggle"></i> </div>
+                    <div class="header_toggle" hidden> <i class='bx bx-menu' id="header-toggle" value='true'></i> </div>
                     <div class="header_img"> <img src="https://i.imgur.com/hczKIze.jpg" alt=""> </div>
                 @endif
                 @else
-                    <div class="header_toggle"> <i class='bx bx-menu' id="header-toggle"></i> </div>
+                    <div class="header_toggle"> <i class='bx bx-menu' id="header-toggle" value='true'></i> </div>
                     <div class="header_img"> <img src="https://i.imgur.com/hczKIze.jpg" alt=""> </div>
             @endguest
 
@@ -85,31 +85,31 @@
         @if (Route::has('register'))
         @endif
     @else
-    <div class="l-navbar" id="nav-bar">
+    <div class="l-navbar show" id="nav-bar">
         <nav class="nav">
             <div> <a href="#" class="nav_logo"> <i class='bx bx-layer nav_logo-icon'></i> <span class="nav_logo-name">San Martin</span> </a>
                 <div class="nav_list"> 
-                    <a href="{{ route('home') }}" class="nav_link active"> 
+                    <a href="{{ route('home') }}" class="nav_link {{ Request::path() ==  'home' ? 'active' : ''  }}"> 
                         <i class='bx bx-grid-alt nav_icon'></i> 
                         <span class="nav_name">Dashboard</span> 
                     </a> 
-                    <a href="{{ route('rooms') }}" class="nav_link"> 
+                    <a href="{{ route('rooms') }}" class="nav_link {{ Request::path() ==  'rooms' ? 'active' : ''  }}"> 
                         <i class='bx bx-user nav_icon'></i> 
                         <span class="nav_name">Rooms</span> 
                     </a> 
-                    <a href="{{ route('logout') }}" class="nav_link"> 
+                    <a href="{{ route('available') }}" class="nav_link {{ Request::path() ==  'available' ? 'active' : ''  }}"> 
                         <i class='bx bx-message-square-detail nav_icon'></i> 
                         <span class="nav_name">available</span> 
                     </a> 
-                    <a href="{{ route('logout') }}" class="nav_link"> 
+                    <a href="{{ route('unavailable') }}" class="nav_link {{ Request::path() ==  'unavailable' ? 'active' : ''  }}"> 
                         <i class='bx bx-bookmark nav_icon'></i> 
                         <span class="nav_name">unavailable</span> 
                     </a> 
-                    <a href="{{ route('logout') }}" class="nav_link"> 
+                    <a href="{{ route('users') }}" class="nav_link {{ Request::path() ==  'users' ? 'active' : ''  }}"> 
                         <i class='bx bx-folder nav_icon'></i> 
                         <span class="nav_name">Users</span> 
                     </a> 
-                    <a href="{{ route('logout') }}" class="nav_link"> 
+                    <a href="{{ route('settings') }}" class="nav_link {{ Request::path() ==  'settings' ? 'active' : ''  }}"> 
                         <i class='bx bx-bar-chart-alt-2 nav_icon'></i> 
                         <span class="nav_name">Settings</span> 
                     </a> 
